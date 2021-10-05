@@ -20,7 +20,7 @@ const CitySelect: React.FC = () => {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={city[0].name}
+          value={city}
           label="Cities"
           onChange={handleChange}
         >
