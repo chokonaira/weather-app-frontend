@@ -2,6 +2,7 @@ import React from 'react';
 import './assets/styles/App.css';
 import Carousel from 'react-elastic-carousel';
 import WeatherCard from './components/WeatherCard';
+import CitySelect from './components/CitySelect';
 
 
 const App: React.FC = () => {
@@ -17,6 +18,9 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <div className="control-wrapper">
+          <CitySelect />
+        </div>
         <Carousel
           enableSwipe={false}
           isRTL={false}

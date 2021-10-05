@@ -26,6 +26,13 @@
   border: 1px solid rgba(2, 2, 2, 0.384);
 }
 
+.control-wrapper{
+  display: flex;
+  justify-content: space-between;
+  width: 760px;
+  margin-bottom: 50px;
+}
+
 .css-1pkfx9i-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root {
   border: 1px solid rgba(27, 31, 34, 0.5) !important;
   color: #000 !important;
