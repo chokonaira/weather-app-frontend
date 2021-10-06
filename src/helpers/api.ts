@@ -6,9 +6,6 @@ dotenv.config();
 
 const config: ApiConfig = {
   baseURL: "http://api.openweathermap.org/data/2.5/forecast",
-  headers: {
-    "Access-Control-Allow-Origin": "*",
-  },
 };
 class Api {
   key: string | undefined;
