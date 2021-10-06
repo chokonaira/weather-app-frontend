@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const config: { baseURL: string, headers: { "Content-Type": string } } = {
-  baseURL: "http://api.openweathermap.org/data/2.5/forecast",
+  baseURL: "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast",
   headers: {
     "Content-Type": "application/json",
   },
