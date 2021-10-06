@@ -13,6 +13,7 @@ code {
 }
 
 .App {
+  background: #9DB8D8;
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -25,6 +26,7 @@ code {
 }
 
 .spinner {
+  background: #9DB8D8;
   background: #fff;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -35,7 +37,7 @@ code {
 }
 
 .error {
-  background: #fff;
+  background: #9DB8D8;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: flex;
