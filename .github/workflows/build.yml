@@ -17,3 +17,5 @@ jobs:
       - run: npm test
         env:
           CI: true
+          REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
+          SKIP_PREFLIGHT_CHECK: ${{ secrets.SKIP_PREFLIGHT_CHECK }}
