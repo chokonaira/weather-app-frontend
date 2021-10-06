@@ -19,7 +19,7 @@ const App: React.FC = () => {
 
   React.useEffect(() => {
     dispatch(fetchWeather())
-  }, [dispatch, weather.scale])
+  }, [dispatch])
 
   const handleBarChart = (item: WeatherData, weather: NewWeather) => {
     dispatch(buildBarChartData(item, weather))

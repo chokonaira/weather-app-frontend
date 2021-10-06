@@ -9,16 +9,25 @@ import {
 } from '@devexpress/dx-react-chart-material-ui';
 import { Animation } from '@devexpress/dx-react-chart';
 import { ChartData } from '../constants/types';
+import { dafaultChartData } from "./../constants/defaultChartData";
 
 type Props = {
   chartData: ChartData[]
 }
 const BarChart: React.FC<Props> = ({ chartData }) => {
+
+  const data = () => {
+    if(chartData.length > 0) {
+      return chartData
+    } else {
+      return dafaultChartData
+    }
+  }
   
   return (
     <Paper>
       <Chart
-        data={chartData}
+        data={data()}
       >
         <ArgumentAxis />
         <ValueAxis />

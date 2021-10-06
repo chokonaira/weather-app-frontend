@@ -1,6 +1,7 @@
 import * as types from "./types";
 import Api from "../../helpers/api";
 import { isSameDay, getTime } from "../../helpers/dateFormatter";
+import { dafaultChartData } from "../../constants/defaultChartData";
 
 import {
   RootState,
@@ -37,7 +38,7 @@ const refreshError = (payload: RootState) => ({
   payload,
 });
 
-const chartDataSuccess = (payload: ChartData[]) => ({
+const chartDataSuccess = (payload: ChartData[] = dafaultChartData) => ({
   type: types.CHART_DATA_SUCCESS,
   payload,
 });
@@ -84,8 +85,8 @@ export const convertTemperatures = (data: Weather, newScale: string) => async (d
       dispatch(weatherSuccess({data, scale: newScale, city: data.city.name, newWeatherData }));
   };
 
-  export const buildBarChartData =
-  (item: WeatherData, weather: NewWeather) => (dispatch: StoreDispatch) => {
+  export const buildBarChartData = (item: WeatherData, weather: NewWeather) => (dispatch: StoreDispatch
+    ) => {
     let chartData: ChartData[] = [];
     weather.newWeatherData.forEach((data: WeatherData) => {
       if (isSameDay(item.date, data.date)) {

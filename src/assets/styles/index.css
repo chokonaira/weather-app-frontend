@@ -25,7 +25,7 @@ code {
 }
 
 .spinner {
-  background: url("./assets/banner.png");
+  background: url("../images/banner.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: flex;
@@ -35,7 +35,7 @@ code {
 }
 
 .error {
-  background: url("./assets/banner.png");
+  background: url("../images/banner.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: flex;
