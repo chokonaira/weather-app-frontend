@@ -2,37 +2,18 @@
 
 A Payoneer Assesment
 
+### Github Actions CI Badges
+
 [![Build CI](https://github.com/chokonaira/weather-app/actions/workflows/build.yml/badge.svg)](https://github.com/chokonaira/weather-app/actions/workflows/build.yml)
 
 [![Linter](https://github.com/chokonaira/weather-app/actions/workflows/linter.yml/badge.svg)](https://github.com/chokonaira/weather-app/actions/workflows/linter.yml)
 
-## Live URL
+
+### Run app locally
+- Run `npm install`
+- Create a `.env` file in the root directory
+- Copy the variable in `.env.example` file and provide and a `API key` from [open weather map](http://api.openweathermap.org) as the value
+- Run `npm run dev` to open app locally on port 3000
+### Live URL
 
 [Heroku](https://payoneer-weather.herokuapp.com/)
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
