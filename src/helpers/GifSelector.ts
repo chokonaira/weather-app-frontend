@@ -1,17 +1,12 @@
 import { WeatherImage } from '../constants/types';
-import cloudGif from "../assets/clouds.gif";
-import RainGif from "../assets/rain.gif";
-import SunGif from "../assets/sun.gif";
-import ClearGif from "../assets/clear-sky.gif";
-
 class GifSelector {
   Image: WeatherImage;
   constructor() {
     this.Image = {
-      Clouds: cloudGif,
-      Rain: RainGif,
-      Sun: SunGif,
-      Clear: ClearGif,
+      Clouds: require("../assets/clouds.gif").default,
+      Rain: require("../assets/rain.gif").default,
+      Sun: require("../assets/sun.gif").default,
+      Clear: require("../assets/clear-sky.gif").default,
     };
   }
 
