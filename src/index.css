@@ -48,7 +48,6 @@ code {
 
 .App-header {
   margin-top: 50px;
-  margin-top: 20px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -146,7 +145,11 @@ code {
   width: 780px !important;
 }
 .jss8 {
+  height: 300px !important;
   width: 780px !important;
+}
+.jss9 {
+  font-size: 16px !important;
 }
 .css-irk9ju{
   border: 1px solid #c4c4c4 !important;
