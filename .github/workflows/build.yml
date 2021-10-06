@@ -5,7 +5,9 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
+      SKIP_PREFLIGHT_CHECK: ${{ secrets.SKIP_PREFLIGHT_CHECK }}
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
@@ -15,7 +17,3 @@ jobs:
       - run: npm install
       - run: npm run build --if-present
       - run: npm test
-        env:
-          CI: true
-          REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
-          SKIP_PREFLIGHT_CHECK: true
