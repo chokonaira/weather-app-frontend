@@ -10,8 +10,8 @@ const port = process.env.PORT || 5000;
 const publicPath = path.join(__dirname, ".", "build");
 app.use(express.static(publicPath));
 
-app.get("/", (req, res) => {
-  res.set('Access-Control-Allow-Origin', '*');
+app.get("*", (req, res) => {
+  res.set('Access-Control-Allow-Origin', 'http://api.openweathermap.org/data/2.5/forecast');
   res.sendFile(path.join(publicPath, "index.html"));
 });
 app.listen(port, () => {

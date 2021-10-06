@@ -5,7 +5,7 @@ import { ApiConfig } from "../constants/types";
 dotenv.config();
 
 const config: ApiConfig = {
-  baseURL: "http://api.openweathermap.org/data/2.5/forecast",
+  baseURL: "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast",
 };
 class Api {
   key: string | undefined;
