@@ -3,8 +3,11 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const config: { baseURL: string } = {
+const config: { baseURL: string, headers: { "Content-Type": string } } = {
   baseURL: "http://api.openweathermap.org/data/2.5/forecast",
+  headers: {
+    "Content-Type": "application/json",
+  },
 };
 class Api {
   key: string | undefined;
