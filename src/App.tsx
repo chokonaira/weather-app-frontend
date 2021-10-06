@@ -66,7 +66,9 @@ const App: React.FC = () => {
                   )}
                 </Carousel>
               </div>
+              <div className="bar-chat">
               <BarChart chartData={chartData} />
+              </div>
             </div>
           }
         </>

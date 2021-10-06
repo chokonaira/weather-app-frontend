@@ -13,7 +13,6 @@ code {
 }
 
 .App {
-  background: #f9f9f9;
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -22,10 +21,11 @@ code {
   flex-direction: column;
   font-size: calc(10px + 2vmin);
   font-family: sans-serif;
+  height: 100%;
 }
 
 .spinner {
-  background: #f9f9f9;
+  background: #fff;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: flex;
@@ -35,7 +35,7 @@ code {
 }
 
 .error {
-  background: #f9f9f9;
+  background: #fff;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: flex;
@@ -80,12 +80,12 @@ code {
   margin-bottom: 120px;
   color: #000;
 }
-.css-1pkfx9i-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root {
-  border: 1px solid rgba(27, 31, 34, 0.5) !important;
-  color: #000 !important;
+.select-dropdown {
+  min-width: 130px;
 }
+
 .css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked {
-  color: #000 !important;
+  color: #5192DB !important;
 }
 .khvUfi {
   background-color: #fff !important;
@@ -142,6 +142,10 @@ code {
 }
 
 .Component-root-1 {
+  height: 300px !important;
+  width: 780px !important;
+}
+.jss8 {
   height: 300px !important;
   width: 780px !important;
 }

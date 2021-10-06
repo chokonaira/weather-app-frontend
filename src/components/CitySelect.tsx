@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -28,7 +27,7 @@ const CitySelect: React.FC<Props> = ({ weather }) => {
     }
   }
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <div className="select-dropdown">
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Cities</InputLabel>
         <Select
@@ -47,7 +46,7 @@ const CitySelect: React.FC<Props> = ({ weather }) => {
           }
         </Select>
       </FormControl>
-    </Box>
+    </div>
   );
 }
 

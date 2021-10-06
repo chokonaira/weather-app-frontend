@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 const Spinner: React.FC = () => {
   return (
     <Box sx={{ display: 'flex' }}>
-      <CircularProgress color="primary" size={100} />
+      <CircularProgress color="primary" size={60} />
     </Box>
   );
 }

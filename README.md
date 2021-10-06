@@ -15,4 +15,5 @@ A Weather App with React and Typescript, using the open weather API, that you ca
 ### Live URL
 
 [Heroku](https://pay-weather.herokuapp.com/)
+
 [gh-pages](https://chokonaira.github.io/weather-app/)
