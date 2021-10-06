@@ -1,10 +1,14 @@
 import axios from "axios";
 import dotenv from "dotenv";
+import { ApiConfig } from "../constants/types";
 
 dotenv.config();
 
-const config: { baseURL: string } = {
-  baseURL: "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast",
+const config: ApiConfig = {
+  baseURL: "http://api.openweathermap.org/data/2.5/forecast",
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+  },
 };
 class Api {
   key: string | undefined;

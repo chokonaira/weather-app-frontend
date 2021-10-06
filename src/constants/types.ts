@@ -129,3 +129,7 @@ export interface MonthFormat extends MonthFormatKeys {
   12: string;
 };
 
+export type ApiConfig = {
+  baseURL: string;
+  headers: { "Access-Control-Allow-Origin": string };
+}
