@@ -149,7 +149,23 @@ code {
   height: 300px !important;
   width: 780px !important;
 }
-
+.css-irk9ju{
+  border: 1px solid #c4c4c4 !important;
+  color: #000 !important;
+}
+.css-irk9ju:hover {
+  border: 1px solid #000 !important;
+}
+.buPiXl {
+  background: #c4c4c4 !important;
+}
+.buPiXl:hover {
+  background: #9DB8D8 !important;
+}
+.cjDndS {
+  background: #fff !important;
+  box-shadow: #9DB8D8 !important;
+}
 svg rect {
   fill: #9DB8D8 !important;
 }
