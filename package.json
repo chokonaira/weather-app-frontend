@@ -14,6 +14,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "axios": "^0.22.0",
+    "axios-mock-adapter": "^1.20.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "path": "^0.12.7",
@@ -24,6 +25,7 @@
     "react-scripts": "4.0.3",
     "redux": "^4.1.1",
     "redux-devtools-extension": "^2.13.9",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
@@ -32,7 +34,7 @@
     "start": "node server.js",
     "dev": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -56,6 +58,7 @@
   "devDependencies": {
     "@types/enzyme": "^3.10.9",
     "@types/jest": "^27.0.2",
+    "@types/redux-mock-store": "^1.0.3",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
