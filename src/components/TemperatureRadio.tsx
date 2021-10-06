@@ -1,5 +1,7 @@
 import React from 'react';
 import { Radio, FormControlLabel, RadioGroup, FormControl } from '@mui/material';
+import { convertTemperatures } from '../redux/actions/weather';
+import { useDispatch } from "react-redux";
 import { NewWeather } from '../constants/types'
 
 type Props = {
@@ -8,11 +10,13 @@ type Props = {
 
 const TemperatureRadio: React.FC<Props> = ({ weather }) => {
 
+  const dispatch = useDispatch();
   const [scale, setScale] = React.useState<string>('celcius');
 
   const handleChange = (event: React.SyntheticEvent<Element, Event>) => {
     const value = (event.target as HTMLInputElement).value;
     setScale(value);
+    dispatch(convertTemperatures(weather.data, value));
   }
 
   return (

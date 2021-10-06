@@ -4,15 +4,29 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { useDispatch } from "react-redux";
+import { fetchWeather } from "../redux/actions/weather";
+import { NewWeather } from '../constants/types'
 import { cities } from '../constants/city'
 
-const CitySelect: React.FC = () => {
-  const [city, setCity] = React.useState<any>("Munich");
-  
+type Props = {
+  weather: NewWeather,
+}
+
+const CitySelect: React.FC<Props> = ({ weather }) => {
+  const dispatch = useDispatch();
+
   const handleChange = (event: SelectChangeEvent): void => {
-    setCity(event.target.value);
+    dispatch(fetchWeather(event.target.value));
   };
 
+  const selectedCity = (): string => {
+    if (weather.city) {
+      return weather.city
+    } else {
+      return cities[0].name
+    }
+  }
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
@@ -20,12 +34,12 @@ const CitySelect: React.FC = () => {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={city}
+          value={selectedCity()}
           label="Cities"
           onChange={handleChange}
         >
-          {cities.map((city:any) => <MenuItem
-            selected={city.name === city}
+          {cities.map(city => <MenuItem
+            selected={city.name === selectedCity()}
             key={city.id}
             value={city.name}>
             {city.name}

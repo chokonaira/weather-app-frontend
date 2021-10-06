@@ -5,7 +5,8 @@ const initialState: InitialState = {
   isFetchingWeather: false,
   isRefreshingWeather: false,
   weather: [],
-  errors: '',
+  chartData: [],
+  errors: "",
 };
 
 const fetchWeather = (state = initialState, action: any) => {
@@ -44,6 +45,11 @@ const fetchWeather = (state = initialState, action: any) => {
       return {
         ...state,
         weather: action.payload,
+      };
+    case types.CHART_DATA_SUCCESS:
+      return {
+        ...state,
+        chartData: action.payload,
       };
     default:
       return state;

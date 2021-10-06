@@ -1,16 +1,32 @@
 import React from 'react';
 import LoadingButton from '@mui/lab/LoadingButton';
 import Refresh from '@mui/icons-material/Refresh';
+import { useDispatch } from "react-redux";
+import { refreshCurrentCityWeather } from "../redux/actions/weather";
+import { NewWeather } from "../constants/types";
 
-const RefreshButton: React.FC = () => {
+type Props = {
+  title: string,
+  variant: "text" | "outlined" | "contained",
+  loading: boolean,
+  weather: NewWeather,
+}
+
+const RefreshButton: React.FC<Props> = ({ title, variant, loading, weather }) => {
+  const dispatch = useDispatch();
+
+  const handleRefresh = () => {
+    dispatch(refreshCurrentCityWeather(weather.city, weather.scale))
+  };
 
   return (
     <LoadingButton
-      loading={false}
+      onClick={handleRefresh}
+      loading={loading}
       loadingPosition="end"
-      variant={'outlined'}
+      variant={variant}
       endIcon={<Refresh />} >
-      Refresh
+      {title}
     </LoadingButton>
   )
 }
