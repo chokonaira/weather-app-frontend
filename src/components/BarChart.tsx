@@ -36,7 +36,7 @@ const BarChart: React.FC<Props> = ({ chartData }) => {
           valueField="temperature"
           argumentField="time"
         />
-        <Title text="Click weather to card to see preview" />
+        <Title text="Click card to see daily weather time and temperature preview" />
         <Animation />
       </Chart>
     </Paper>

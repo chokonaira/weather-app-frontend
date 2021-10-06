@@ -147,12 +147,12 @@ code {
 }
 
 svg rect {
-  fill: #333 !important;
+  fill: #9DB8D8 !important;
 }
 
 .Title-root-2 {
   color: #333 !important;
-  font-size: 16px !important;
+  font-size: 14px !important;
 }
 @media only screen and (max-width: 600px) {
   
