@@ -1,8 +1,8 @@
 import { WeatherImage } from '../constants/types';
-import cloudGif from "../assets/images/clouds.gif";
-import RainGif from "../assets/images/rain.gif";
-import SunGif from "../assets/images/sun.gif";
-import ClearGif from "../assets/images/clear-sky.gif";
+import cloudGif from "../assets/clouds.gif";
+import RainGif from "../assets/rain.gif";
+import SunGif from "../assets/sun.gif";
+import ClearGif from "../assets/clear-sky.gif";
 
 class GifSelector {
   Image: WeatherImage;

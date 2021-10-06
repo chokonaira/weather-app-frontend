@@ -1,18 +1,18 @@
-const path = require("path");
 const express = require("express");
-var cors = require('cors')
+const path = require("path");
+const favicon = require("express-favicon");
 
 const app = express();
-app.use(cors())
+const port = process.env.PORT || 3000;
 
-const port = process.env.PORT || 5000;
+app.use(favicon(__dirname + "/build/favicon.ico"));
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, "build")));
 
-const publicPath = path.join(__dirname, ".", "build");
-app.use(express.static(publicPath));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(publicPath, "index.html"));
+app.get("/*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "build", "index.html"));
 });
+
 app.listen(port, () => {
   console.log(`Up and running on port ${port}`);
 });
