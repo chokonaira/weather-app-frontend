@@ -1,6 +1,6 @@
 # Weather App
 
-A Payoneer Assesment
+A Weather App with React and Typscript, using the open weather API, that you can preview the weather across 5 different cities in Germany and has functionality to toggle between 2 differnet temperature scales as preferred.
 
 ### Github Actions CI Badges
 
