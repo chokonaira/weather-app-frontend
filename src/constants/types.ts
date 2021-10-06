@@ -29,7 +29,6 @@ type Data = {
   city: WeatherCity;
 };
 
-
 export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
 export type AxiosResponseType = AxiosResponse;
 export type RootState = ReturnType<typeof rootReducer>;
@@ -77,10 +76,16 @@ export type WeatherState = {
   errors: string;
 };
 
+export type ChartData = {
+  time: string;
+  temperature: number;
+};
+
 export type InitialState = {
   isFetchingWeather: boolean;
   isRefreshingWeather: boolean;
   weather: Weather[];
+  chartData: ChartData[];
   errors: string;
 };
 interface ScaleTypeKeys {

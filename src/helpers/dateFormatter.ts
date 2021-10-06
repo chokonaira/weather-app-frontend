@@ -29,6 +29,25 @@ export const dateFormatter = (d: string): string => {
     year = date.getFullYear(),
     hour = addZero(date.getHours()),
     minute = addZero(date.getMinutes());
-    
+
   return `${day} ${MONTH_FORMAT[month + 1]}, ${year}. ${hour}:${minute}`;
+};
+
+export const isSameDay = (itemDate: string, otherDates: string) => {
+  const dateOne = new Date(itemDate);
+  const dateTwo = new Date(otherDates);
+
+  return (
+    dateOne.getFullYear() === dateTwo.getFullYear() &&
+    dateOne.getMonth() === dateTwo.getMonth() &&
+    dateOne.getDate() === dateTwo.getDate()
+  );
+};
+
+export const getTime = (date: string) => {
+  const time = new Date(date),
+    hour = addZero(time.getHours()),
+    minute = addZero(time.getMinutes());
+
+  return `${hour}:${minute}`;
 };
