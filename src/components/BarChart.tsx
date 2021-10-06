@@ -17,13 +17,13 @@ type Props = {
 const BarChart: React.FC<Props> = ({ chartData }) => {
 
   const data = () => {
-    if(chartData.length > 0) {
+    if(chartData?.length > 0) {
       return chartData
     } else {
       return dafaultChartData
     }
   }
-  
+
   return (
     <Paper>
       <Chart
@@ -36,7 +36,7 @@ const BarChart: React.FC<Props> = ({ chartData }) => {
           valueField="temperature"
           argumentField="time"
         />
-        <Title text="" />
+        <Title text="Click weather to card to see preview" />
         <Animation />
       </Chart>
     </Paper>
