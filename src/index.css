@@ -27,7 +27,6 @@ code {
 
 .spinner {
   background: #9DB8D8;
-  background: #fff;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: flex;
@@ -49,7 +48,7 @@ code {
 }
 
 .App-header {
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
