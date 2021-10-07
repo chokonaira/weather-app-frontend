@@ -31,6 +31,7 @@ const CitySelect: React.FC<Props> = ({ weather }) => {
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Cities</InputLabel>
         <Select
+          classes={{ root: 'classes-state-root'}}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={selectedCity()}

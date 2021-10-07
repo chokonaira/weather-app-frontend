@@ -24,7 +24,7 @@ const TemperatureRadio: React.FC<Props> = ({ weather }) => {
       <RadioGroup
         value={scale}
         name="controlled-radio-buttons-group"
-        className="radio"
+        classes={{ root: 'radio'}}
         onChange={handleChange}
       >
         <FormControlLabel

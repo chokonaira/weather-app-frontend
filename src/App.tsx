@@ -49,7 +49,7 @@ const App: React.FC = () => {
                 <Carousel
                   enableSwipe={false}
                   isRTL={false}
-                  itemsToShow={3}
+                  itemsToShow={1}
                   transitionMs={1000}
                 >
                   {weather?.newWeatherData?.map((item: WeatherData, index: number) =>
