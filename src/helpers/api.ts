@@ -5,10 +5,10 @@ import { ApiConfig } from "../constants/types";
 dotenv.config();
 
 const toggleBaseUrl = () => {
-  if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
-    return "http://api.openweathermap.org/data/2.5/forecast";
-  } else {
+  if (process.env.PORT) {
     return "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast";
+  } else {
+    return "http://api.openweathermap.org/data/2.5/forecast";
   }
 };
 

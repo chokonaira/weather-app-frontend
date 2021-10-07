@@ -14,11 +14,15 @@ import NavBar from './components/NavBar';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
+  const breakpoint = 800;
+  const [width, setWidth] = React.useState(window.innerWidth);
+
   const { isFetchingWeather, isRefreshingWeather, errors, weather, chartData } =
     useSelector((state: RootState) => state.fetchWeather);
 
   React.useEffect(() => {
     dispatch(fetchWeather())
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, [dispatch])
 
   const handleBarChart = (item: WeatherData, weather: NewWeather) => {
@@ -33,7 +37,7 @@ const App: React.FC = () => {
           {errors ?
             (<div className="error">{errors}</div>) :
             <div className="App">
-                <NavBar weather={weather}/>
+              <NavBar weather={weather} />
               <div className="App-header">
                 <div className="control-wrapper">
                   <TemperatureRadio
@@ -49,7 +53,7 @@ const App: React.FC = () => {
                 <Carousel
                   enableSwipe={false}
                   isRTL={false}
-                  itemsToShow={1}
+                  itemsToShow={width > breakpoint ? 3 : 1}
                   transitionMs={1000}
                 >
                   {weather?.newWeatherData?.map((item: WeatherData, index: number) =>
@@ -65,7 +69,7 @@ const App: React.FC = () => {
                 </Carousel>
               </div>
               <div className="bar-chart">
-              <BarChart chartData={chartData} />
+                <BarChart chartData={chartData} />
               </div>
             </div>
           }

@@ -9,7 +9,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-
 .App {
   text-align: center;
   display: flex;
@@ -19,19 +18,23 @@ code {
   height: 100vh;
   width: 100vw;
 }
+
 .MuiTypography-h5 {
   font-size: 0.9rem !important;
 }
+
 .css-1y942vo-MuiButtonBase-root-MuiButton-root {
   display: none !important;
   ;
 }
+
 .spinner {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .error {
   height: 100vh;
   display: flex;
@@ -39,6 +42,7 @@ code {
   align-items: center;
   color: red;
 }
+
 .control-wrapper {
   margin-top: 80px;
   display: flex;
@@ -47,15 +51,26 @@ code {
   height: 60px;
   padding: 4px;
 }
+
 .css-dmmspl-MuiFormGroup-root {
   display: flex !important;
   flex-direction: row !important;
-} 
+}
+
 .iHAfmq {
   width: calc(100% - 50px) !important;
+  justify-content: center !important;
+}
+.App-header {
+  height: 600px;
 }
 .bwgQCB {
   width: calc(100% - 30px) !important;
+}
+.MuiPaper-elevation1 {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
 }
 .bar-chart {
   display: flex;
@@ -63,30 +78,41 @@ code {
   justify-content: center;
   align-items: center;
 }
-.Component-root-1{
+
+.Component-root-1 {
   margin-top: 20px !important;
 }
+
 h1 {
   font-size: 16px;
 }
+
 .khvUfi {
   background-color: #fff !important;
   opacity: 0.7 !important;
   color: #1776D1 !important;
   font-size: 1.2em !important;
 }
+
 .khvUfi:hover {
   background-color: #1776D1 !important;
   color: #fff !important;
 }
+
 .jJOCMs {
   height: 320px !important;
   margin-top: 30px !important;
 }
+
 .jJKuoL {
   box-shadow: 0 0 1px 3px #1776d1 !important;
   background-color: #fff !important;
 }
+
+.css-1t29gy6-MuiToolbar-root {
+  background: #9DB8D8 !important;
+}
+
 @media only screen and (min-width: 768px) {
   .App {
     text-align: center;
@@ -124,6 +150,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 900px;
+    height: 600px;
   }
   .weather-card {
     width: 250px;
@@ -133,7 +160,6 @@ h1 {
     border: 1px solid rgba(2, 2, 2, 0.384);
     cursor: pointer;
   }
-  
   .control-wrapper {
     margin-top: 80px;
     display: flex;
@@ -176,7 +202,7 @@ h1 {
   }
   .iHAfmq {
     justify-content: center !important;
-}
+  }
   .khvUfi:hover {
     background-color: #000 !important;
     color: #fff !important;
@@ -226,9 +252,12 @@ h1 {
   }
   .Component-root-1 {
     width: 780px !important;
+    height: 400px !important;
   }
   .jss8 {
     width: 780px !important;
+    height: 400px !important;
+
   }
   .jss9 {
     font-size: 16px !important;
@@ -259,5 +288,8 @@ h1 {
   .Title-root-2 {
     color: #333 !important;
     font-size: 14px !important;
+  }
+  .css-1t29gy6-MuiToolbar-root {
+    background: #9DB8D8 !important;
   }
 }

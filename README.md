@@ -17,3 +17,6 @@ A Weather App with React and Typescript, using the open weather API, that you ca
 [Heroku](https://pay-weather.herokuapp.com/)
 
 [gh-pages](https://chokonaira.github.io/weather-app/)
+
+### Things to Note:
+- Using `!important` to enforce styles, is not an ideal approach to overiding styles of third party component, in this case - `Material UI` and `@devexpress/dx-react-chart-material-ui` components, however from further studies, I can see that one can set styles using the `clasess` object and assinging the css class selector as the `root` value. I intend to refactor my code to remove `!important` from everywhere it is being used in future.
