@@ -4,9 +4,18 @@ import { ApiConfig } from "../constants/types";
 
 dotenv.config();
 
-const config: ApiConfig = {
-  baseURL: "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast",
+const toggleBaseUrl = () => {
+  if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+    return "http://api.openweathermap.org/data/2.5/forecast";
+  } else {
+    return "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast";
+  }
 };
+
+const config: ApiConfig = {
+  baseURL: toggleBaseUrl(),
+};
+
 class Api {
   key: string | undefined;
   constructor() {

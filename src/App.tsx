@@ -4,13 +4,13 @@ import WeatherCard from './components/WeatherCard';
 import TemperatureRadio from './components/TemperatureRadio';
 import RefreshButton from './components/RefreshButton';
 import Spinner from './components/Spinner';
-import CitySelect from './components/CitySelect';
 import { fetchWeather, buildBarChartData } from "./redux/actions/weather";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, WeatherData, NewWeather } from './constants/types'
 import GifSelector from './helpers/GifSelector'
 import { dateFormatter } from './helpers/dateFormatter';
 import BarChart from './components/BarChart';
+import NavBar from './components/NavBar';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -33,9 +33,10 @@ const App: React.FC = () => {
           {errors ?
             (<div className="error">{errors}</div>) :
             <div className="App">
+                <NavBar weather={weather}/>
               <div className="App-header">
                 <div className="control-wrapper">
-                  <CitySelect
+                  <TemperatureRadio
                     weather={weather}
                   />
                   <RefreshButton
@@ -45,9 +46,6 @@ const App: React.FC = () => {
                     weather={weather}
                   />
                 </div>
-                <TemperatureRadio
-                  weather={weather}
-                />
                 <Carousel
                   enableSwipe={false}
                   isRTL={false}
@@ -66,7 +64,7 @@ const App: React.FC = () => {
                   )}
                 </Carousel>
               </div>
-              <div className="bar-chat">
+              <div className="bar-chart">
               <BarChart chartData={chartData} />
               </div>
             </div>
