@@ -12,5 +12,10 @@ module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   snapshotSerializers: ["enzyme-to-json/serializer"],
   setupFilesAfterEnv: ["<rootDir>/src/setupEnzyme.ts"],
-  testTimeout: 50000
+  testTimeout: 50000,
+  globals: {
+    'ts-jest': {
+      diagnostics: false
+    }
+  }
 };
