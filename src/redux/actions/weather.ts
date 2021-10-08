@@ -14,7 +14,6 @@ import {
   NewWeather,
   ChartData
 } from "../../constants/types";
-import console from "console";
 
 const weatherLoading = () => ({
   type: types.WEATHER_LOADING,

@@ -1,9 +1,9 @@
 // @ts-nocheck
-import { convertTemperatures, buildBarChartData, fetchWeather } from "../redux/actions/weather";
+import { convertTemperatures, buildBarChartData, fetchWeather, refreshCurrentCityWeather } from "../redux/actions/weather";
 import configureStore from "redux-mock-store";
 import MockAdapter from "axios-mock-adapter";
 import thunk from "redux-thunk";
-import { WEATHER_LOADING, WEATHER_SUCCESS, CHART_DATA_SUCCESS, WEATHER_ERROR } from "../redux/actions/types";
+import { WEATHER_LOADING, WEATHER_SUCCESS, CHART_DATA_SUCCESS, WEATHER_ERROR, REFRESH_LOADING, REFRESH_ERROR } from "../redux/actions/types";
 import { convertTemperatureHelper } from "./testHelper";
 import { dateFormatter } from "../helpers/dateFormatter";
 import Api from "../helpers/api";
@@ -168,6 +168,38 @@ describe("weather action", () => {
         },
       ];
       store.dispatch(fetchWeather('Munich', 'celcius')).then(() => {
+        try {
+          expect(store.getActions()).toEqual(expectedActions);
+          done();
+        } catch (error) {
+          done(error);
+        }
+      });
+    });
+  });
+
+  describe("refresh weather action", () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+    it("refreshes current city weather data from open weather map succesfully", (done) => {
+      const store = mockStore({});
+      
+      const { weatherData, dispatchedData } =
+      convertTemperatureHelper("fahrenheit", "-38°F");
+      
+      mock.onGet(`?q=Hamburg&APPID=${Api.key}&cnt=40`).reply(200, weatherData);
+
+      const expectedActions = [
+        {
+          type: REFRESH_LOADING,
+        },
+        {
+          type: WEATHER_SUCCESS,
+          payload: dispatchedData,
+        },
+      ];
+      store.dispatch(refreshCurrentCityWeather('Hamburg', 'fahrenheit')).then(() => {
         try {
           expect(store.getActions()).toEqual(expectedActions);
           done();
