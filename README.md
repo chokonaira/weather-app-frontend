@@ -18,7 +18,6 @@ A Weather App with React and Typescript, using the open weather API, that you ca
 - Copy the variables in `.env.example` file. 
 - Provide a `APPID` from Open Weather, If you do not already have one, please navigate to [open weather map](http://api.openweathermap.org) to create one and add as the value to `REACT_APP_API_KEY`. 
 - Also add `SKIP_PREFLIGHT_CHECK=true` to skip `babel-jest` dependencies flagging.
-- Now within `./src/helpers/api` file, on `Line 8`, remove `https://cors-anywhere.herokuapp.com/` from the `baseUrl` and only have it as `http://api.openweathermap.org/data/2.5/forecast`
 - Run `npm run dev` to serve app locally on port 3000
 
 ### Run Jest Test locally
