@@ -1,13 +1,17 @@
 // @ts-nocheck
-import { convertTemperatures, buildBarChartData } from "../redux/actions/weather";
+import { convertTemperatures, buildBarChartData, fetchWeather } from "../redux/actions/weather";
 import configureStore from "redux-mock-store";
+import MockAdapter from "axios-mock-adapter";
 import thunk from "redux-thunk";
-import { WEATHER_SUCCESS, CHART_DATA_SUCCESS } from "../redux/actions/types";
+import { WEATHER_LOADING, WEATHER_SUCCESS, CHART_DATA_SUCCESS, WEATHER_ERROR } from "../redux/actions/types";
 import { convertTemperatureHelper } from "./testHelper";
 import { dateFormatter } from "../helpers/dateFormatter";
+import Api from "../helpers/api";
 
 jest.mock("../helpers/dateFormatter");
+const mock = new MockAdapter(Api.axiosInstance);
 const mockStore = configureStore([thunk]);
+
 
 describe("weather action", () => {
   beforeEach(() => {
@@ -82,6 +86,8 @@ describe("weather action", () => {
       store.dispatch(buildBarChartData(item, weather));
 
       expect(store.getActions()).toEqual(expectedActions);
+      expect(dateFormatter.isSameDay).toHaveBeenCalledWith("2021-10-07 18:00:00", "2021-09-07 03:00:00");
+      expect(dateFormatter.getTime).toHaveBeenCalledWith("2021-09-07 03:00:00");
       done();
     });
     it("builds empty chart data list when there is weather item within the same day", (done) => {
@@ -100,7 +106,7 @@ describe("weather action", () => {
         ],
       };
       const dispatchedData = [];
-      
+
       const expectedActions = [
         {
           type: CHART_DATA_SUCCESS,
@@ -110,7 +116,65 @@ describe("weather action", () => {
       store.dispatch(buildBarChartData(item, weather));
 
       expect(store.getActions()).toEqual(expectedActions);
+      expect(dateFormatter.isSameDay).toHaveBeenCalledWith("2021-10-03 18:00:00", "2021-09-07 03:00:00");
+      expect(dateFormatter.getTime).not.toHaveBeenCalled();
       done();
+    });
+  });
+
+  describe("fetchWeather action", () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+    it("fetch weather data from open weather map succesfully", (done) => {
+      const store = mockStore({});
+      
+      const { weatherData, dispatchedData } =
+      convertTemperatureHelper("celcius", "-39°C");
+      
+      mock.onGet(`?q=Munich&APPID=${Api.key}&cnt=40`).reply(200, weatherData);
+
+      const expectedActions = [
+        {
+          type: WEATHER_LOADING,
+        },
+        {
+          type: WEATHER_SUCCESS,
+          payload: dispatchedData,
+        },
+      ];
+      store.dispatch(fetchWeather('Munich', 'celcius')).then(() => {
+        try {
+          expect(store.getActions()).toEqual(expectedActions);
+          done();
+        } catch (error) {
+          done(error);
+        }
+      });
+    });
+    it("does not fetch weather data from open weather map succesfully", (done) => {
+      const store = mockStore({});
+      const payload = "Request failed with status code 404";
+      
+      mock.onGet(`?q=Munich&APPID=${Api.key}&cnt=40`).reply(404, payload);
+
+      const expectedActions = [
+        {
+          type: WEATHER_LOADING,
+        },
+        {
+          type: WEATHER_ERROR,
+          payload,
+        },
+      ];
+      store.dispatch(fetchWeather('Munich', 'celcius')).then(() => {
+        try {
+          expect(store.getActions()).toEqual(expectedActions);
+          done();
+        } catch (error) {
+          done(error);
+        }
+      });
     });
   });
 });

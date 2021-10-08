@@ -14,6 +14,7 @@ import {
   NewWeather,
   ChartData
 } from "../../constants/types";
+import console from "console";
 
 const weatherLoading = () => ({
   type: types.WEATHER_LOADING,
@@ -50,7 +51,6 @@ export const fetchWeather = (defaultCity: string = "Munich", defaultScale: strin
     return Api.axiosInstance
       .get(`?q=${defaultCity}&APPID=${Api.key}&cnt=40`)
       .then(({ data }: AxiosResponseType) => {
-        
         dispatch(convertTemperatures(data, defaultScale));
       })
       .catch((error) => {
@@ -65,7 +65,6 @@ export const refreshCurrentCityWeather = (currentCity: string, currentScale: str
     return Api.axiosInstance
       .get(`?q=${currentCity}&APPID=${Api.key}&cnt=40`)
       .then(({ data }: AxiosResponseType) => {
-
         dispatch(convertTemperatures(data, currentScale));
       })
       .catch((error) => {

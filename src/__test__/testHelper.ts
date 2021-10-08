@@ -1,4 +1,4 @@
-export const convertTemperatureHelper = (scale: string, convertedTemperature: string) => {
+export const convertTemperatureHelper = (scale: string, convertedTemperature: string = '0°C') => {
   const newScale = scale;
   const weatherData = {
     city: {

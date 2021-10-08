@@ -6,7 +6,7 @@ dotenv.config();
 
 const config: ApiConfig = {
   // baseURL: `${process.env.REACT_APP_CORS_ANYWHERE}http://api.openweathermap.org/data/2.5/forecast`,
-  baseURL: `http://api.openweathermap.org/data/2.5/forecast`,
+  baseURL: `${process.env.REACT_APP_CORS_ANYWHERE}http://api.openweathermap.org/data/2.5/forecast`,
 };
 
 class Api {
