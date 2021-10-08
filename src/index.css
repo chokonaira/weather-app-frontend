@@ -19,15 +19,14 @@ code {
   width: 100vw;
 }
 
+
 .MuiTypography-h5 {
   font-size: 0.9rem !important;
 }
-
 .css-1y942vo-MuiButtonBase-root-MuiButton-root {
   display: none !important;
   ;
 }
-
 .spinner {
   height: 100vh;
   display: flex;
@@ -44,7 +43,7 @@ code {
 }
 
 .control-wrapper {
-  margin-top: 80px;
+  margin-top: 90px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -68,7 +67,6 @@ code {
   width: calc(100% - 30px) !important;
 }
 .MuiPaper-elevation1 {
-  width: 100% !important;
   display: flex !important;
   justify-content: center !important;
 }
@@ -112,7 +110,44 @@ h1 {
 .css-1t29gy6-MuiToolbar-root {
   background: #9DB8D8 !important;
 }
-
+.Component-root-1 {
+  width: calc(100% - 50px) !important;
+  height: 400px !important;
+}
+.jss8 {
+  width: calc(100% - 50px) !important;
+  height: 400px !important;
+}
+.buPiXl {
+  background: #c4c4c4 !important;
+}
+.buPiXl:hover {
+  background: #9DB8D8 !important;
+}
+.cjDndS {
+  background: #fff !important;
+  box-shadow: #9DB8D8 !important;
+}
+.css-irk9ju {
+  border: 1px solid #c4c4c4 !important;
+  color: #000 !important;
+}
+.css-irk9ju:hover {
+  border: 1px solid #000 !important;
+}
+svg rect {
+  fill: #9DB8D8 !important;
+}
+.bar-chart {
+  margin-top: 20px
+}
+.Title-root-2 {
+  color: #333 !important;
+  font-size: 14px !important;
+}
+.css-1t29gy6-MuiToolbar-root {
+  background: #9DB8D8 !important;
+}
 @media only screen and (min-width: 768px) {
   .App {
     text-align: center;
@@ -250,24 +285,14 @@ h1 {
     left: 0;
     width: 100%;
   }
-  .Component-root-1 {
-    width: 780px !important;
-    height: 400px !important;
-  }
-  .jss8 {
-    width: 780px !important;
-    height: 400px !important;
-
-  }
   .jss9 {
     font-size: 16px !important;
   }
-  .css-irk9ju {
-    border: 1px solid #c4c4c4 !important;
-    color: #000 !important;
+  .Component-root-1 {
+    width: 800px !important;
   }
-  .css-irk9ju:hover {
-    border: 1px solid #000 !important;
+  .jss8 {
+    width: 800px !important;
   }
   .buPiXl {
     background: #c4c4c4 !important;
@@ -279,17 +304,11 @@ h1 {
     background: #fff !important;
     box-shadow: #9DB8D8 !important;
   }
-  svg rect {
-    fill: #9DB8D8 !important;
+  .css-irk9ju {
+    border: 1px solid #c4c4c4 !important;
+    color: #000 !important;
   }
-  .bar-chart {
-    margin-top: 20px
-  }
-  .Title-root-2 {
-    color: #333 !important;
-    font-size: 14px !important;
-  }
-  .css-1t29gy6-MuiToolbar-root {
-    background: #9DB8D8 !important;
+  .css-irk9ju:hover {
+    border: 1px solid #000 !important;
   }
 }

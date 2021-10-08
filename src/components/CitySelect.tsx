@@ -28,7 +28,7 @@ const CitySelect: React.FC<Props> = ({ weather }) => {
   }
   return (
     <div className="select-dropdown">
-      <FormControl fullWidth>
+      <FormControl>
         <InputLabel id="demo-simple-select-label">Cities</InputLabel>
         <Select
           classes={{ root: 'classes-state-root'}}
