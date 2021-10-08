@@ -37,11 +37,10 @@
   },
   "scripts": {
     "deploy": "gh-pages -d build",
-    "start": "node server.js",
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "craco start",
+    "build": "craco build",
     "test": "jest --detectOpenHandles",
-    "eject": "react-scripts eject"
+    "eject": "craco eject"
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +61,7 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^6.3.0",
     "@types/enzyme": "^3.10.9",
     "@types/jest": "^27.0.2",
     "@types/redux-mock-store": "^1.0.3",
