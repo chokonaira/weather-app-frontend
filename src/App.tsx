@@ -62,7 +62,7 @@ const App: React.FC = () => {
                         gifBackground={GifSelector.selectGif(item.main)}
                         description={item.description}
                         temperature={item.convertedTemperature}
-                        date={dateFormatter(item.date)}
+                        date={dateFormatter.fullDate(item.date)}
                       />
                     </div>
                   )}

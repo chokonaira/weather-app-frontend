@@ -1,6 +1,6 @@
 import * as types from "./types";
 import Api from "../../helpers/api";
-import { isSameDay, getTime } from "../../helpers/dateFormatter";
+import { dateFormatter } from "../../helpers/dateFormatter";
 import { dafaultChartData } from "../../constants/defaultChartData";
 
 import {
@@ -85,18 +85,18 @@ export const convertTemperatures = (data: Weather, newScale: string) => async (d
       dispatch(weatherSuccess({data, scale: newScale, city: data.city.name, newWeatherData }));
   };
 
-  export const buildBarChartData = (item: WeatherData, weather: NewWeather) => (dispatch: StoreDispatch
-    ) => {
-    let chartData: ChartData[] = [];
-    weather.newWeatherData.forEach((data: WeatherData) => {
-      if (isSameDay(item.date, data.date)) {
-        const time = getTime(data.date);
-        const formatTemperature = Number(data.convertedTemperature.substring(0,data.convertedTemperature.length - 2));
-        chartData.push({ time, temperature: formatTemperature });
-      }
-    });
-    dispatch(chartDataSuccess(chartData));
-  };
+export const buildBarChartData = (item: WeatherData, weather: NewWeather) => (dispatch: StoreDispatch
+  ) => {
+  let chartData: ChartData[] = [];
+  weather.newWeatherData.forEach((data: WeatherData) => {
+    if (dateFormatter.isSameDay(item.date, data.date)) {
+      const time = dateFormatter.getTime(data.date);
+      const formatTemperature = Number(data.convertedTemperature.substring(0,data.convertedTemperature.length - 2));
+      chartData.push({ time, temperature: formatTemperature });
+    }
+  });
+  dispatch(chartDataSuccess(chartData));
+};
 
 const kelvinToCelciusFahrenheitFormular = (
   temperature: number,
