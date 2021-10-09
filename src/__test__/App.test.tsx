@@ -11,7 +11,7 @@ jest.mock('react-elastic-carousel');
 jest.mock('@devexpress/dx-react-chart-material-ui');
 jest.mock('@material-ui/core');
 
-new MockAdapter(Api.axiosInstance);
+new MockAdapter(Api);
 const mockStore = configureMockStore([thunk]);
 
 describe("App Component", () => {

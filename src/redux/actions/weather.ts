@@ -47,8 +47,8 @@ export const fetchWeather = (defaultCity: string = "Munich", defaultScale: strin
   ) => {
     dispatch(weatherLoading());
 
-    return Api.axiosInstance
-      .get(`?q=${defaultCity}&APPID=${Api.key}&cnt=40`)
+    return Api
+      .get(`/weather/${defaultCity}`)
       .then(({ data }: AxiosResponseType) => {
         dispatch(convertTemperatures(data, defaultScale));
       })
@@ -61,8 +61,8 @@ export const refreshCurrentCityWeather = (currentCity: string, currentScale: str
   ) => {
     dispatch(refreshLoading());
 
-    return Api.axiosInstance
-      .get(`?q=${currentCity}&APPID=${Api.key}&cnt=40`)
+    return Api
+      .get(`/weather/${currentCity}`)
       .then(({ data }: AxiosResponseType) => {
         dispatch(convertTemperatures(data, currentScale));
       })

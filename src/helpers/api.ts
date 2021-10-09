@@ -5,16 +5,9 @@ import { ApiConfig } from "../constants/types";
 dotenv.config();
 
 const config: ApiConfig = {
-  baseURL:
-    "http://api.openweathermap.org/data/2.5/forecast",
+  baseURL: "https://weather-app-back.herokuapp.com",
 };
 
-class Api {
-  key: string | undefined;
-  constructor() {
-    this.key = process.env.REACT_APP_API_KEY;
-  }
-  axiosInstance = axios.create(config);
-}
+const Api = axios.create(config);
 
-export default new Api();
+export default Api;

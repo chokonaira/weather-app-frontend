@@ -1,7 +1,7 @@
 import React from "react";
 import { rootReducer } from "../redux/reducers";
 import { store } from "../redux/store";
-import { AxiosResponse } from "axios";
+import { AxiosResponse, Method } from "axios";
 
 type ListMain = {
   temp: number | any;

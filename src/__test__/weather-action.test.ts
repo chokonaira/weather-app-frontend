@@ -9,7 +9,7 @@ import { dateFormatter } from "../helpers/dateFormatter";
 import Api from "../helpers/api";
 
 jest.mock("../helpers/dateFormatter");
-const mock = new MockAdapter(Api.axiosInstance);
+const mock = new MockAdapter(Api);
 const mockStore = configureStore([thunk]);
 
 
@@ -132,7 +132,7 @@ describe("weather action", () => {
       const { weatherData, dispatchedData } =
       convertTemperatureHelper("celcius", "-39°C");
       
-      mock.onGet(`?q=Munich&APPID=${Api.key}&cnt=40`).reply(200, weatherData);
+      mock.onGet('/weather/Munich').reply(200, weatherData);
 
       const expectedActions = [
         {
@@ -156,7 +156,7 @@ describe("weather action", () => {
       const store = mockStore({});
       const payload = "Request failed with status code 404";
       
-      mock.onGet(`?q=Munich&APPID=${Api.key}&cnt=40`).reply(404, payload);
+      mock.onGet('/weather/Munich').reply(404, payload);
 
       const expectedActions = [
         {
@@ -188,7 +188,7 @@ describe("weather action", () => {
       const { weatherData, dispatchedData } =
       convertTemperatureHelper("fahrenheit", "-38°F");
       
-      mock.onGet(`?q=Hamburg&APPID=${Api.key}&cnt=40`).reply(200, weatherData);
+      mock.onGet('/weather/Hamburg').reply(200, weatherData);
 
       const expectedActions = [
         {
