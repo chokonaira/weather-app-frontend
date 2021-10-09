@@ -10,7 +10,7 @@ A Weather App with React and Typescript, using the open weather API, that you ca
 
 [Heroku](https://pay-weather.herokuapp.com/)
 
-[gh-pages](https://chokonaira.github.io/weather-app/)
+[gh-pages](https://chokonaira.github.io/weather-app-frontend/)
 
 ### Backend Server Repo
 [Weather-App-Backend](https://github.com/chokonaira/weather-app-backend)
