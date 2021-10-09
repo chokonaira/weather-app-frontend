@@ -6,7 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
       SKIP_PREFLIGHT_CHECK: ${{ secrets.SKIP_PREFLIGHT_CHECK }}
     steps:
       - uses: actions/checkout@v2
