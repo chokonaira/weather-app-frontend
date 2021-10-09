@@ -15,7 +15,7 @@ A Weather App with React and Typescript, using the open weather API, that you ca
 ### Backend Server Repo
 [Weather-App-Backend](https://github.com/chokonaira/weather-app-backend)
 
-### Run app locally
+### Run app locally 
 - Run `npm install`
 - Create a `.env` file in the root directory
 - Copy the variables in `.env.example` file.
@@ -24,8 +24,8 @@ A Weather App with React and Typescript, using the open weather API, that you ca
 ### Run Jest Test locally
 - Run `npm install`
 - Create a `.env` file in the root directory
-- Copy the variables in `.env.example` file. 
-- Provide a `APPID` from Open Weather, If you do not already have one, please navigate to [open weather map](http://api.openweathermap.org) to create one and add as the value to `REACT_APP_API_KEY`. 
+- Copy the variables in `.env.example` file.  
+- Run `npm test`.
 
 ### Steps to Deploy
 - Weather App is currently deployed on two different environments. `Heroku` and `Github pages`

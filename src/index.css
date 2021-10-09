@@ -118,6 +118,22 @@ h1 {
   width: calc(100% - 50px) !important;
   height: 400px !important;
 }
+.jss15 {
+  width: calc(100% - 50px) !important;
+  height: 400px !important;
+}
+.jss22 {
+  width: calc(100% - 50px) !important;
+  height: 400px !important;
+}
+.jss29 {
+  width: calc(100% - 50px) !important;
+  height: 400px !important;
+}
+.jss36 {
+  width: calc(100% - 50px) !important;
+  height: 400px !important;
+}
 .buPiXl {
   background: #c4c4c4 !important;
 }
@@ -313,5 +329,17 @@ svg rect {
   }
   .css-irk9ju:hover {
     border: 1px solid #000 !important;
+  }
+  .jss15 {
+    width: 800px !important;
+  }
+  .jss22 {
+    width: 800px !important;
+  }
+  .jss29 {
+    width: 800px !important;
+  }
+  .jss36 {
+    width: 800px !important;
   }
 }
